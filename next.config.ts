@@ -2,13 +2,13 @@ import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-    rewrites() {
+    async rewrites() {
         return [
             {
-                source: `/${process.env.NEXT_PUBLIC_API_URL}`,
-                destination: `https://${process.env.NEXT_PUBLIC_API_URL as string}`,
+                source: `/:path*/${process.env.NEXT_PUBLIC_API_URL}/:slug*`,
+                destination: `https://${process.env.NEXT_PUBLIC_API_URL}/:slug*`,
             }
-        ]
+        ];
     },
 };
 
