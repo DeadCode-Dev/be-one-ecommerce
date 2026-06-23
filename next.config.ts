@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
         return [
             {
                 source: `/${process.env.NEXT_PUBLIC_API_URL}`,
-                destination: process.env.NEXT_PUBLIC_API_URL as string,
+                destination: `https://${process.env.NEXT_PUBLIC_API_URL as string}`,
             }
         ]
     },
